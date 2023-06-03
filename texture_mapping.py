@@ -47,7 +47,7 @@ def get_wall_corners(image):
     """Computes the coordinates of walls according to the computed segmentation mask
 
     Args:
-        image (np.ndarray): image of an uploaded room
+        image (np.ndarray): wall layout estimation segmentation mask 
 
     Returns:
         List[List[Tuple[int, int]]]: coordinates of the corresponding walls

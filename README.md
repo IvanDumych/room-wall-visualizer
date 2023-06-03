@@ -34,4 +34,6 @@ Pre-trained weight at [Google Drive](https://drive.google.com/file/d/1aUJoXM9SQM
    ```
    python app.py
    ```
-Open http://localhost:9000 
+Open http://localhost:9000 <br>
+
+Folder [test_images](./test_images) - contains images of rooms and textures to visualize the work

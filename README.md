@@ -18,7 +18,7 @@ Pre-trained weight at [Google Drive](https://drive.google.com/file/d/1aUJoXM9SQM
    python -m venv env
    ```
 
-2. Start the virtualenv:
+2. Start the virtual environment:
 
    ```
    env\Scripts\Activate

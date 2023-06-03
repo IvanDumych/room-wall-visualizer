@@ -1,0 +1,80 @@
+{% extends "layout.html"%}
+{% block title %}
+Room visualizer
+{% endblock %}
+
+{% block content %}
+<style>
+  .loading {
+    display: none;
+    text-align: center;
+  }
+</style>
+
+<div class="container py-5">
+
+  <header class="text-white text-center">
+    <h1 class="display-4">ROOM WALL VISUALIZER</h1>
+    <p class="lead mb-5">A webapp to apply new color or texture to your room. Just drop an image and see new room.
+    </p>
+  </header>
+
+
+  <div class="row py-4">
+    <div class="col-lg-6 mx-auto">
+
+      <!-- Upload image input-->
+      <form id="uploadForm" action="{{ url_for('predict_image_room') }}" enctype="multipart/form-data" method="POST">
+        <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+          <input class="form-control border-0" id="upload" name="file" type="file">
+          <label class="font-weight-light text-muted" for="upload" id="upload-label">Choose file</label>
+          <div class="input-group-append">
+            <label class="btn btn-light m-0 rounded-pill px-4" for="upload"> <i
+                class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+          </div>
+        </div>
+
+        <!-- loading image here-->
+        <div id="loadingMessage" style="display: none;">
+          <div class="row">
+            <div>
+              <img src="static\IMG\loading.gif" alt="Loading" style="width: 25px; height: 25spx;">
+            </div>
+            <div class="text-white text-center">
+              <p class="lead mb-5 white">Please wait while the image is being processed...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Uploaded image area-->
+        <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box
+          below.</p>
+        <div class="image-area mt-4"><img alt="" class="img-fluid rounded shadow-sm mx-auto d-block" id="imageResult"
+            name="change" src="{{ room }}"></div>
+
+        <!-- Submit button-->
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <button class="btn btn-primary my-3" type="submit" name="button" value="color">Change
+                color</button>
+
+            </div>
+            <div class="col text-center">
+              <button class="btn btn-primary my-3" type="submit" name="button" value="texture">Change
+                texture</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='js/image_upload.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+Flask==2.0.1
+kornia==0.4.1
+loguru==0.7.0
+matplotlib==3.3.3
+numpy==1.24.3
+opencv_python==4.5.4.60
+Pillow==9.5.0
+pytorch_lightning==2.0.2
+scipy==1.9.1
+torch==2.0.1
+torchvision==0.15.2
+tqdm==4.65.0
+onegan@git+https://github.com/leVirve/OneGan
